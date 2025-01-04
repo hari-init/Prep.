@@ -154,29 +154,61 @@ console.log(dash);
 // }
 
 //promises and callbacks
-
 //callback
 
-const cbFn = (callback) => {
-  setTimeout(() => {
-    callback("callback is kicked");
-  }, 1000);
-};
+// const cbFn = (callback) => {
+//   setTimeout(() => {
+//     callback("callback is kicked");
+//   }, 1000);
+// };
 
-cbFn((data) => {
-  console.log("data", data);
-});
+// cbFn((data) => {
+//   console.log("data", data);
+// });
 
-// promise
+// // promise
 
-const promiseFn = () => {
-  const pro = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("time out from promise");
-    }, 1000);
-  });
+// const promiseFn = () => {
+//   const pro = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("time out from promise");
+//     }, 1000);
+//   });
 
-  return pro;
-};
+//   return pro;
+// };
 
-promiseFn().then((data) => console.log(data));
+// promiseFn().then((data) => console.log(data));
+
+//promise
+
+// const promiseFn1 = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("resolved promise in 1 sec");
+//     }, 1000);
+//   });
+// };
+// const promiseFn2 = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve("resolved promise in 2 sec");
+//     }, 2000);
+//   });
+// };
+
+// Promise.all([promiseFn1(), promiseFn2()]).then((data) => {
+//   console.log(data);
+// });
+
+// // callback
+
+// const callbackFn1 = (callback) => {
+//   setTimeout(() => {
+//     callback("fuck out");
+//   }, 2000);
+// };
+// const callbackFn2 = (data) => {
+//   console.log(data);
+// };
+// callbackFn1((data) => callbackFn2(data));
