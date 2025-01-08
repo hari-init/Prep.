@@ -260,16 +260,254 @@ const twoSum = (arr, t) => {
 
 // pa([1,2,4,6])
 
-const lc = (arr) => {
-  let len = 0;
-  for (let i = 0; i < arr.length; i++) {
-    let count = arr[i] + 1;
-    if (arr.includes(count)) {
-      // makes O(n^2)
-      len++;
+// const lc = (arr) => {
+//     let arrSet = new Set(arr)
+//     let len = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         let count = arr[i] + 1
+//         if(arrSet.has(count)) { // makes O(n^2)
+//             len++
+//         }
+//     }
+
+//     return len
+// }
+// lc([2,20,4,10,3,4,5])
+
+// const lc = (arr) => {
+//    let arrSet = new Set(arr);
+//     let streak = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if(!arrSet.has(arr[i] - 1)) {
+//             let currentNum = arr[i];
+//             let currentStreak = 1;
+
+//             while(arrSet.has(currentNum + 1)) {
+//                 currentNum += 1
+//                 currentStreak += 1
+//             }
+
+//             streak = Math.max(streak, currentStreak)
+//         }
+//     }
+
+//     return streak
+// }
+
+// lc([100, 4, 200, 1, 3, 2])
+
+// const palindrome = (str) => {
+//     let palString = ''
+//     for (let i = 0; i < str.length; i++) {
+//         if(str[i] >= 'a' &&  str[i] <= 'z' ||
+//           str[i] >= 'A' &&  str[i] <= 'Z' ||
+//           str[i] >= '0' &&  str[i] <= '9') {
+//             palString += str[i].toLowerCase()
+//         }
+//     }
+
+//     return palString.split('').reverse().join('') === palString
+
+// }
+
+// const isAN = (str) => {
+//     return (str >= 'a' &&  str <= 'z' || str >= 'A' &&  str <= 'Z' || str >= '0' &&  str <= '9')
+// }
+
+// const palindrome = (str) => {
+//     //two pointer
+//     let left = 0;
+//     let right = str.length - 1;
+
+//     for (let i = 0; i < str.length; i++) {
+//         while(left < right) {
+//             while(left < right && !isAN(str[left])) {
+//                 left++
+//             }
+
+//             while(left < right && !isAN(str[right])) {
+//                 right--
+//             }
+
+//             if(str[left].toLowerCase() !== str[right].toLowerCase()) {
+//                 return false
+//             }
+
+//                 left++
+//                 right--
+//         }
+
+//     }
+
+//     return true
+
+// }
+
+// palindrome('Was it a car or a cat I saw')
+
+// const threeSum = (arr) => {
+//     arr.sort((a, b) => a - b);
+//     const result = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             for (let k = j + 1; k < arr.length; k++) {
+//                 if(arr[i] + arr[j] + arr[k] === 0) {
+//                     result.push([arr[i], arr[j],arr[k]])
+//                 }
+//             }
+//         }
+//     }
+//     return result
+// }
+
+// threeSum([-1,0,1,2,-1,-4])
+
+// const threeSum = (nums) => {
+// const result = [];
+// nums.sort((a,b) => a - b)
+
+//     for (let i = 0; i < nums.length; i++) {
+//         if(nums[i] > 0) {
+//             break
+//         }
+
+//         if(i > 0 && nums[i] === nums[i - 1]) {
+//             continue
+//         }
+
+//         let l = i + 1
+//         let r = nums.length - 1
+
+//         while(l < r) {
+//             const sum = nums[i] + nums[l]+ nums[r]
+
+//             if(sum > 0) {
+//               r--
+//             } else if(sum < 0) {
+//                 l++
+//             } else {
+//                 result.push([nums[i], nums[l],nums[r]])
+//                 l++
+//                 r--
+//                 while(l < r && nums[l] === nums[l - 1]) {
+//                     l++
+//                 }
+//             }
+
+//         }
+
+//     }
+
+//     return result
+// }
+
+// threeSum([-1,0,1,2,-1,-4])
+
+// const mostWater = (arr) => {
+
+//     let result = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             let height = Math.min(arr[i], arr[j])
+//             let width = j - i
+//             let area = height * width
+//             result = Math.max(area, result)
+//         }
+//     }
+
+//     return result
+// }
+
+// const mostWater = (arr) => {
+//     let left = 0;
+//     let right = arr.length - 1;
+//     let result = 0;
+
+//     while (left < right) {
+//         let height = Math.min(arr[left], arr[right])
+//         let width = right - left
+//         let area =  height * width
+
+//         result = Math.max(result, area)
+//         if(arr[left] <= arr[right]) {
+//             left++
+//         } else {
+//             right--
+//         }
+//     }
+
+//     return result
+// }
+
+// mostWater([1,7,2,5,4,7,3,6])
+
+// buy and sell
+
+// const BS = (arr) => {
+//     let result = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             result = Math.max(result, arr[j] - arr[i])
+//         }
+//     }
+//     return result
+// }
+
+// BS([10,1,5,6,7,1])
+
+// const bs = (arr) => {
+//     let start = Infinity
+//     let result = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if(arr[i] < start) {
+//             start = arr[i]
+//         } else {
+//             if(arr[i] - start  > result) {
+//                 result = arr[i] - start
+//             }
+//         }
+//     }
+
+//     return result
+// }
+
+// bs([10,8,7,5,2])
+
+// const lss = (str) => {
+//     let result = 0;
+//    for (let i = 0; i < str.length; i++) {
+//        let strSet = new Set();
+
+//        for (let j = i; j < str.length; j++) {
+//            if(strSet.has(str[j])) {
+//                break;
+//            }
+//             strSet.add(str[j])
+//            result = Math.max(result, strSet.size)
+//        }
+//    }
+//    return result
+// }
+
+const lss = (str) => {
+  let l = 0;
+  let res = 0;
+  const charSet = new Set();
+
+  for (let r = 0; r < str.length; r++) {
+    while (charSet.has(str[r])) {
+      charSet.delete(str[l]);
+      l++;
     }
+
+    charSet.add(str[r]);
+    res = Math.max(res, r - l + 1);
   }
 
-  return len;
+  return res;
 };
-lc([2, 20, 4, 10, 3, 4, 5]);
+
+lss("pwwkew");
