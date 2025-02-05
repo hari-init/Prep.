@@ -1,0 +1,25 @@
+.board {
+    border: 1px solid yellow;
+}
+
+.row {
+    display: flex;
+    border: red 1px solid;
+    /* flex-direction: column; */
+    height: 50px;
+    width: 150px;
+}
+
+.col {
+    border: white 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 50px;
+}
+
+.score {
+    display: flex;
+    border: 1px white solid;
+}

@@ -1,0 +1,32 @@
+
+Here's the revised version with some small improvements:
+
+Hi,
+
+I am Hariharan Ravi.
+
+In this assessment, I have used the following stack:
+
+- React with TypeScript
+- Tailwind for responsiveness
+- Vite for bundling
+- ChartJS as required
+
+HOW TO RUN
+To keep the project submission size within the limit, I have removed the node_modules folder.
+
+- Run 'npm install'
+- Run 'npm run dev'
+This will start the application.
+
+I have also hosted the site at this link:
+https://hari-init.github.io/coalition/
+
+This assessment is fully responsive, from mobile to large screens.
+For API authentication, I have used an API key.
+
+Thank you for your time. I look forward to hearing from you.
+
+Thanks,
+Hariharan Ravi
+

@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+}
+
+.child {
+    display: flex;
+    place-items: center;
+}
+
+.forward {
+    border: 1px solid silver;
+}
